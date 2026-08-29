@@ -63,5 +63,9 @@ merge 중이면 ESC -> :wq로 초기화
 가상환경에서 먼저 pip로 인스톨을 진행하고 pip freeze > requirements.txt
 pip freeze > requirements.txt 를 사용시 현재 사용하는 패키지 버전을 그대로 가져온다.
 
+새 브랜치를 처음 push하면 → GitHub이 "어, 새 브랜치네! main과 비교해서 PR 만들래?"라고 처음 한 번 자동으로 배너를 띄워줌
+그 브랜치에 계속 커밋을 추가하고 다시 push해도 → 이미 GitHub이 그 브랜치를 알고 있으니, 배너가 다시 안 뜰 수도 있음 (하지만 PR은 여전히 수동으로 만들 수 있음)
+실제로 main에 합쳐지는(merge) 시점은 → push할 때가 아니라, GitHub PR 페이지에서 "Merge" 버튼을 직접 눌렀을 때만 일어남
+
 ```
 """
