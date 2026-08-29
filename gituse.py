@@ -19,6 +19,8 @@ git remote add origin
 git install -r requirements.txt
 
 
+
+- 가상환경
 python -m venv venv
 venv\Scripts\activate
 deactivate
