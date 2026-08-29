@@ -31,6 +31,7 @@ deactivate
  PR(Pull Request) 과정
 git clone -b (브랜치 이름) (url)
 git branch [현재 사용중인 브랜치] -> 브랜치 이동은 git checkout [해당 브랜치 이름] -> git switch -c "브랜치 이름"
+git branch -d feature/login # 로컬 브랜치 삭제 git push origin --delete feature/login 원격 브랜치 삭제
 git add . git add use.py use2.py 로 지정해서 업데이트가 가능하다
 git commit -m "커밋 내용"
 git push origin branch이름
