@@ -39,22 +39,24 @@ git push origin branch이름
 개발자는 develop 브랜치에서 자유롭게 커밋 혹시나 feature에 개별 기능이 존재할 경우 feature를 통해 develop로 커밋 
 배포전에 QA용으로 만드는 브랜치로 release
 
+
 브랜치 로컬에 로컬로 저장하기
 git stash -> 수정한 내용이 사라지고 저장됨
 git stash list -> 저장된 목록 확인
 git stash pop -> 다시 꺼내오기
 git stash apply 적용은 하되 목록에서 삭제는 안함
-git stash drop stash@{0} 특정 stash 삭제
-git stash clear
+git stash drop "stash@{0}" 특정 stash 삭제
+git stash clear 전체 삭제
 
 
-# 내 브랜치(현재 브랜치) 내용으로 유지
+# 내 브랜치(현재 브랜치) 내용으로 유지??
 git checkout --ours gituse.py
 
-# 상대방(merge해오는 쪽) 내용으로 유지
+# 상대방(merge해오는 쪽) 내용으로 유지??
 git checkout --theirs gituse.py
 
 merge 중이면 ESC -> :wq로 초기화
+
 
 ```
 """
