@@ -57,6 +57,7 @@ git checkout --theirs gituse.py
 
 merge 중이면 ESC -> :wq로 초기화
 
-
+가상환경에서 먼저 pip로 인스톨을 진행하고 pip freeze > requirements.txt
+pip freeze > requirements.txt 를 사용시 현재 사용하는 패키지 버전을 그대로 가져온다
 ```
 """
