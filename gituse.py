@@ -40,7 +40,7 @@ git push origin branch이름
 배포전에 QA용으로 만드는 브랜치로 release
 같은 브랜치의 경우는 push를 하면 pr이 생기지 않기 때문에
 브랜치를 분할해서 사용한다는 뜻은 develop/feature/login 랑 develop/feature/logout 과 같이 주소형식으로 다른 브랜치를 만들어
-develop/feature로 pr한다는 것이다. 
+develop/feature로 pr한다는 것이다. 근데 한번 만든 pr은 다시 merge가 뜨지않는다.?
 
 
 브랜치 로컬에 로컬로 저장하기
