@@ -47,10 +47,11 @@ develop/feature로 pr한다는 것이다. 근데 한번 만든 pr은 다시 merg
 브랜치 로컬에 로컬로 저장하기
 git stash -> 수정한 내용이 사라지고 저장됨
 git stash list -> 저장된 목록 확인
-git stash pop -> 다시 꺼내오기
+git stash pop -> 다시 꺼내오기 번호를 지정하지않을시 가장 최근에 적용한 것이 pop된다. git stash pop "stash@{1}" 시 적용
 git stash apply 적용은 하되 목록에서 삭제는 안함
 git stash drop "stash@{0}" 특정 stash 삭제
 git stash clear 전체 삭제
+stash는 최근꺼부터 채워지기 시작해 {0}이 가장최근 가져온 것
 
 
 # 내 브랜치(현재 브랜치) 내용으로 유지??
@@ -67,6 +68,7 @@ pip freeze > requirements.txt 를 사용시 현재 사용하는 패키지 버전
 새 브랜치를 처음 push하면 → GitHub이 "어, 새 브랜치네! main과 비교해서 PR 만들래?"라고 처음 한 번 자동으로 배너를 띄워줌
 그 브랜치에 계속 커밋을 추가하고 다시 push해도 → 이미 GitHub이 그 브랜치를 알고 있으니, 배너가 다시 안 뜰 수도 있음 (하지만 PR은 여전히 수동으로 만들 수 있음)
 실제로 main에 합쳐지는(merge) 시점은 → push할 때가 아니라, GitHub PR 페이지에서 "Merge" 버튼을 직접 눌렀을 때만 일어남
+
 
 ```
 """
