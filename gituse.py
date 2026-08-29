@@ -48,7 +48,7 @@ git stash apply 적용은 하되 목록에서 삭제는 안함
 git stash drop "stash@{0}" 특정 stash 삭제
 git stash clear 전체 삭제
 
-
+  asdf
 # 내 브랜치(현재 브랜치) 내용으로 유지??
 git checkout --ours gituse.py
 
