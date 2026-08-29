@@ -38,6 +38,9 @@ git push origin branch이름
 브랜치는 master 브랜치에서 develop 브랜치로 분기한다.
 개발자는 develop 브랜치에서 자유롭게 커밋 혹시나 feature에 개별 기능이 존재할 경우 feature를 통해 develop로 커밋 
 배포전에 QA용으로 만드는 브랜치로 release
+같은 브랜치의 경우는 push를 하면 pr이 생기지 않기 때문에
+브랜치를 분할해서 사용한다는 뜻은 develop/feature/login 랑 develop/feature/logout 과 같이 주소형식으로 다른 브랜치를 만들어
+develop/feature로 pr한다는 것이다. 
 
 
 브랜치 로컬에 로컬로 저장하기
@@ -58,6 +61,7 @@ git checkout --theirs gituse.py
 merge 중이면 ESC -> :wq로 초기화
 
 가상환경에서 먼저 pip로 인스톨을 진행하고 pip freeze > requirements.txt
-pip freeze > requirements.txt 를 사용시 현재 사용하는 패키지 버전을 그대로 가져온다
+pip freeze > requirements.txt 를 사용시 현재 사용하는 패키지 버전을 그대로 가져온다.
+
 ```
 """
