@@ -26,3 +26,65 @@ pivot을 통해 최악의 경우를 막는 방법을 고안하는 것이 중요�
 할수도 있다!
 
 """
+
+def findmid(a, b, c):
+    if (a - b) * (a - c) <= 0:
+        return a
+    elif (b - a) * (b - c) <= 0:
+        return b
+    else:
+        return c
+
+def partition(arr, low, high):
+    
+    return i + 1
+
+def quick_sort_helper(arr, low, high):
+    if len(arr) <= 1:
+        return arr
+    mid = ((low + high) // 2)
+    mid_value = findmid(arr[low], arr[mid], arr[high])
+    if mid_value == arr[low]:
+        pivot = low
+    elif mid_value == arr[mid]:
+        pivot = mid
+    else:
+        pivot = high
+    tmp = arr[pivot]
+    arr[pivot] = arr[mid]
+    arr[mid] = tmp
+    pivot = mid
+    left = low
+    right = high
+    leftswitch = 0
+    rightswitch = 0
+    for i in range(len(arr)):
+        if left > right:
+            break
+        if (leftswitch == 1) and (rightswitch == 1):
+            tmp = arr[left]
+            arr[left] = arr[right]
+            arr[right] = tmp
+            leftswitch = 0
+            rightswitch = 0
+
+        if (left == pivot):
+            left = left + 1
+            continue
+        if (right == pivot):
+            right = right - 1
+            continue
+        if arr[left] > arr[pivot]:
+            leftswitch = 1
+        if arr[right] < arr[pivot]:
+            rightswitch = 1
+        if not leftswitch:
+            left = left + 1
+        if not rightswitch:
+            right = right - 1
+        if left==right:
+            tmp = arr[left]
+            arr[left] = arr[right]
+            arr[right] = tmp
+    return quick_sort_helper(arr[:mid],0,mid-1) + [arr[mid]] + quick_sort_helper(arr[mid+1:],0,len(arr[mid+1:])-1)
+
