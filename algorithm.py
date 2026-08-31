@@ -24,7 +24,7 @@ pivot을 선택하는 것이 중요한 이유는 최악의 경우 버블정렬�
 pivot을 통해 최악의 경우를 막는 방법을 고안하는 것이 중요하다
 하지만 퀵정렬이 지금도 가장 빠른 정렬 알고리즘인 이유는 바로 애초에 정렬된 리스트를 정렬하려고 하지않기 때문이라고
 할수도 있다!
-
+아이디어 : 계속전진하고 상황이 맞으면 나가는건 당연히 ! while문이다.
 """
 
 # def findmid(a, b, c):
@@ -88,6 +88,8 @@ pivot을 통해 최악의 경우를 막는 방법을 고안하는 것이 중요�
 #             arr[right] = tmp
 #     return quick_sort_helper(arr[:mid],0,mid-1) + [arr[mid]] + quick_sort_helper(arr[mid+1:],0,len(arr[mid+1:])-1)
 
+# 호어 방식
+
 def findmid(a, b, c):
     if (a - b) * (a - c) <= 0:
         return a
@@ -111,4 +113,31 @@ def partition(arr, low, high):
         arr[left], arr[right] = arr[right], arr[left]
         right -= 1
         left += 1
+
+# 로모토 방식
+def partition(arr, low, high):
+    pivot = arr[high]
+    count = low -1
+    for i in range(low,high):
+        if arr[i] <= pivot:
+            count +=1
+            tmp = arr[i]
+            arr[i] = arr[count]
+            arr[count] = tmp
+    arr[count+1], arr[high] = arr[high], arr[count+1]
+    return count + 1
         
+
+def quick_sort_helper(arr, low, high):
+    if low >= high:
+        return
+    split = partition(arr, low, high)
+    quick_sort_helper(arr, low, split-1)
+    quick_sort_helper(arr, split+1, high)
+    
+
+ 
+
+def quick_sort(arr):
+    quick_sort_helper(arr, 0, len(arr) - 1)
+    return arr
