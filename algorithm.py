@@ -141,3 +141,77 @@ def quick_sort_helper(arr, low, high):
 def quick_sort(arr):
     quick_sort_helper(arr, 0, len(arr) - 1)
     return arr
+
+"""
+
+분할정렬
+분할 정렬의 아이디어는 원자값까지 쪼개는 거지만 arr 실제 배열은 쪼개지 않고 left와 right로 나눈다는 것이다.
+재귀는 base case가 중요한데 재귀가 2개가 있고 아래에 merge가 있다면 
+그거를 쓰는 것이다. 원자값까지 쪼갠다 => 배열에서 left와 right를 범위로 쪼갠다.
+
+
+
+"""
+def merge(arr, left, mid, right):
+    """
+    두 개의 정렬된 부분 배열을 병합하는 함수
+    
+    Args:
+        arr: 원본 배열
+        left: 왼쪽 부분의 시작 인덱스
+        mid: 왼쪽 부분의 끝 인덱스
+        right: 오른쪽 부분의 끝 인덱스
+    """
+    # TODO: 왼쪽과 오른쪽 부분 배열을 임시 배열로 복사
+    leftarr = arr[left:mid+1]
+    rightarr = arr[mid+1:right+1]
+    pass
+    
+    # TODO: 두 배열을 병합
+    sorted = []
+    pass
+    
+    leftarrcount = 0
+    rightarrcount = 0
+    while leftarrcount < len(leftarr) and rightarrcount < len(rightarr):
+        if leftarr[leftarrcount] < rightarr[rightarrcount]:
+            sorted.append(leftarr[leftarrcount])
+            leftarrcount += 1
+        else:
+            sorted.append(rightarr[rightarrcount])
+            rightarrcount += 1
+          
+        
+    sorted.extend(leftarr[leftarrcount:])
+    sorted.extend(rightarr[rightarrcount:])
+    arr[left:right+1] = sorted
+
+    # TODO: left_arr와 right_arr를 비교하며 작은 값을 arr에 복사
+
+    pass
+    
+    # TODO: 남은 원소들을 복사
+    # left_arr에 남은 원소가 있으면 복사
+    # right_arr에 남은 원소가 있으면 복사
+    pass
+
+def merge_sort_helper(arr, left, right):
+    if left < right:
+        mid = (left + right) // 2
+        merge_sort_helper(arr, left, mid)      # 왼쪽 절반 재귀 정렬
+        merge_sort_helper(arr, mid + 1, right) # 오른쪽 절반 재귀 정렬
+        merge(arr, left, mid, right)           # 정렬된 두 절반 병합
+
+def merge_sort(arr):
+    """
+    머지 정렬 메인 함수
+    
+    Args:
+        arr: 정렬할 배열
+    
+    Returns:
+        정렬된 배열
+    """
+    if len(arr) > 1:
+        merge_sort_helper(arr, 0, len(arr) - 1)
+    return arr
